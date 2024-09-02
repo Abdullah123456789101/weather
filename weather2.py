@@ -1,14 +1,9 @@
-# https://github.com/meteostat/meteostat-python?tab=readme-ov-file
 # Import Meteostat library and dependencies
 from datetime import datetime
 import matplotlib.pyplot as plt
 from meteostat import Point, Daily
-import pandas as pd
 
-place_df = pd.read_csv("place.csv")
-
-coordinates = list(zip(place_df['latitude'], place_df['longtitude'], place_df['altitude']))
-
+# Set time period
 yearStart = int(input("Start årstal: "))
 monthStart=int(input("Start måned: "))
 dayStart=int(input("Start dag: "))
@@ -20,11 +15,11 @@ dayEnd=int(input("Slut dag: "))
 start = datetime(yearStart, monthStart, dayStart)
 end = datetime(yearEnd, monthEnd, dayEnd)
 
-# Create Point from coordinates in csv file
-location = Point=coordinates
+# Create Point for Vancouver, BC
+location = Point(49.2497, -123.1193, 70)
 
-# Get daily data from date interval
-data = Daily(location,start,end)
+# Get daily data for 2018
+data = Daily(location, start, end)
 data = data.fetch()
 
 # Plot line chart including average, minimum and maximum temperature
