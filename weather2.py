@@ -29,7 +29,7 @@ dayEnd=1
 start = datetime(yearStart, monthStart, dayStart)
 end = datetime(yearEnd, monthEnd, dayEnd)
 
-# Create Point for Vancouver, BC
+# Create Point for Dollerupvej 2
 location = Point(49.2497, -123.1193, 70)
 
 # Get daily data for 2018
