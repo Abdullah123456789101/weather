@@ -1,7 +1,10 @@
 # Import Meteostat library and dependencies
 from datetime import datetime
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 from meteostat import Point, Daily
+import plotly.express as px
+
+
 
 # Set time period
 #
